@@ -7,10 +7,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",
-    "localhost:3000"
-]
+# origins = [
+    # "http://localhost:3000",
+    # "localhost:3000",
+    # 'https://5f57-113-190-235-106.ap.ngrok.io/'
+# ]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,9 +24,10 @@ app.add_middleware(
 
 @app.post("/ec50-cal/")
 async def create_upload_file(file: UploadFile = File(...)):
+    print(file)
     name  = file.filename.split('.')[-1]
     if name == 'xlsx' or name == 'xls' or name == 'xltm':
-        sheet = file.file.read()
+        sheet =  file.file.read()
         try:
             xls = pd.ExcelFile(BytesIO(sheet))
             data = xls.parse(0)
