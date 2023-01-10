@@ -28,12 +28,17 @@ ChartJS.register(
 export const options = {
   responsive: true,
   plugins: {
+    tooltip:{},
     legend: {
       position: 'top' as const,
     },
     title: {
       display: true,
-      text: 'Visualize chart',
+      text: 'Visual chart',
+      font:{
+        size:20,
+      },
+      color: 'white',
     },
   },
   scales:{
@@ -45,8 +50,8 @@ export const options = {
             color: 'white',
           }
         },
-        x: {
-          border: {
+    x: {
+        border: {
             display: true
           },
           grid: {
@@ -54,6 +59,10 @@ export const options = {
           },
           ticks:{
             color: 'white',
+            padding: 10,
+            font: {
+              size: 12
+            }
           }
         },
   }
@@ -85,7 +94,11 @@ export default class FRChart extends Component <any,any> {
           data: f_data,
           fill: true,
           backgroundColor: "rgba(29, 31, 72,0.2)",
-          borderColor: "#0c62ed"
+          borderColor: "#0c62ed",
+          parsing: {
+            xAxisKey: 'key',
+            yAxisKey: 'value'
+          }
         }
       ]
     };

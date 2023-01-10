@@ -44,7 +44,16 @@ table{
   height:30rem;
   display:block;
 }
+.head{
+  width: 4.9rem;
+}
 
+thead th {
+  position: sticky; /* make the table heads sticky */
+  top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  /* padding: 5px 10px; */
+  width:'200px'
+}
 /* width */
 ::-webkit-scrollbar {
   width: 15px;

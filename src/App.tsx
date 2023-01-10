@@ -56,14 +56,14 @@ export default class App extends Component <any,any>{
                   <Col> <p style ={{fontSize:'1.5rem', color:'azure'}}>F: {this.state.f_index}</p>  </Col>
                 </Row>
                 <Row>
-                  <table className='table table-hover '><thead className='thead-dark' style= {{color:'white'}}>
-                    <tr>
-                    <th>Ca</th>
-                    <th>Mg</th>
-                    <th>Na</th>
-                    <th>K</th>
-                    <th>H</th>
-                    <th>EC50</th>
+                  <table className='table '><thead className='thead-dark' style= {{color:'white'}}>
+                    <tr className='table-secondary'>
+                    <th className='head' >Ca</th>
+                    <th className='head' >Mg</th>
+                    <th className='head' >Na</th>
+                    <th className='head' >K</th>
+                    <th className='head' >H</th>
+                    <th className='head' >EC50</th>
                     </tr>
                     </thead>
                   <tbody style= {{color:'white',fontSize: '1rem'}}>
