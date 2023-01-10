@@ -33,21 +33,24 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart',
+      text: 'Visualize chart',
     },
   },
   scales:{
     y: {
           grid: {
-            display: false,
+            display: true,
           },
           ticks:{
             color: 'white',
           }
         },
         x: {
+          border: {
+            display: true
+          },
           grid: {
-            display: false,
+            display: true,
           },
           ticks:{
             color: 'white',
@@ -86,6 +89,7 @@ export default class FRChart extends Component <any,any> {
         }
       ]
     };
-    return <Line  options={options} data={data} />;
+    return <Line  options={options} data={data} width = {20}
+    height = {15} />;
   }
 }
